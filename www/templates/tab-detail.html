@@ -1,0 +1,33 @@
+<ion-view view-title="More Info">
+<ion-content class="padding">
+<div class="list card">
+
+	<div class="item item-avatar">
+		<img src="{{detail.img}}">
+		<h2>{{detail.product_name}}</h2>
+		<p>{{detail.price | currency}}</p>
+	</div>
+
+	<div class="item item-body">
+		<img class="full-image" src="{{detail.img}}">
+		<p>
+			{{detail.desc}}</p>
+			<p>{{detail.level}} Alc
+			</p>
+			<p>
+				<a href="#" class="subdued">Quantity: {{detail.quantity}}</a>
+			</p>
+		</div>
+
+		<div class="item tabs tabs-secondary tabs-icon-left">
+
+			<a class="tab-item" href="/#/tab/items"ng-click="addItem()">
+				<i class="icon ion-check"></i>
+				Add to Cart
+				
+			</a>
+		</div>
+
+	</div>
+</ion-content>
+</ion-view>

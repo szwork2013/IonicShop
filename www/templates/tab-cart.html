@@ -1,0 +1,26 @@
+<ion-view view-title="Shopping Cart">
+<ion-content class="padding">
+<div class="list card">
+  <td>
+    <div class="item item-divider">Cart</div>
+    <div class="item item-body">
+      <div ng-repeat="objects in items">
+        {{objects.product_name}} 
+        {{objects.price | currency}}
+        <a class="btn" ng-click="remove(objects)">Delete</a>
+      </div>
+    </div>
+    <div class="item item-divider" >Total : {{getTotal() | currency}} </div>
+    <div>
+    </div>
+
+  </div>
+</div>
+</div>
+<a class="tab-checkout"style="color:black; text-decoration:none" href="/#/tab/checkout"><button class="button button-block button-positive">
+  Checkout
+</button>
+</a>  
+</div>
+</ion-content>
+</ion-view>

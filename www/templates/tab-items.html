@@ -1,0 +1,19 @@
+<ion-view view-title="Items">
+<ion-content class="padding">
+<div class="list card">
+
+<div class="item item-avatar" ng-repeat="contact in contacts">
+		<img src="{{contact.img}}">
+		<a href="/#/tab/items/{{contact.id}}">
+		<h2>{{contact.product_name}}</h2>
+			</a>
+		<p>{{contact.price | currency}}</p>
+	
+	</div>
+</div>
+</div>
+</ion-content>
+</ion-view>
+
+
+
