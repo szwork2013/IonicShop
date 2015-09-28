@@ -9,7 +9,7 @@
 	</div>
 
 	<div class="item item-body">
-		<img class="full-image" src="">
+		<img class="full-image" src="{{detail.img}}">
 		<p>
 			{{detail.desc}}</p>
 			<p>{{detail.level}} Alc
@@ -19,11 +19,9 @@
 			</p>
 		</div>
 	</div>
-	<ion-item class="item" href="#/tab/items" ng-click="addItem()">
-	<div class="bar bar-header bar-positive">
-	<p="title">Add to cart</p>
+	<div href="#/tab/items" ng-click="addItem()">
+		<button class="button button-block button-positive">Add to Cart</button>
 	</div>
-</ion-item>
 
 </ion-content>
 </ion-view>

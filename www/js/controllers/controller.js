@@ -30,7 +30,7 @@ angular.module('starter.controllers', [])
 		$scope.login = function () {
 			Auth.$authWithOAuthRedirect("facebook").then(function (authData) {
 				$scope.authData = authData;
-
+				console.log(authData);
 			}, {
 				remember: "sessionOnly",
 				scope: "email,user_likes"
@@ -49,9 +49,21 @@ angular.module('starter.controllers', [])
 		};
 
 
-	}).controller('CheckoutCtrl', function ($scope, shopfactory) {
-
+	}).controller('CheckoutCtrl', function ($scope, shopfactory, Auth) {
+		$scope.name = '';
+		$scope.picture = '';
+		Auth.$onAuth(function (authData) {
+			if (authData === null) {
+				console.log("Not logged in yet");
+			} else {
+				console.log("Logged in as", authData.facebook.displayName);
+				$scope.name = authData.facebook.displayName;
+				$scope.picture = authData.facebook.profileImageURL;
+			}
+			$scope.authData = authData; // This will display the user's name in our view
+		});
 	})
+
 
 .controller('DetailCtrl', function ($scope, $stateParams, shopfactory, Items, Products) {
 	$scope.detail = shopfactory.getById($stateParams.itemId);

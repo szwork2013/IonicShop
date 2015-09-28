@@ -45,13 +45,13 @@
 
 
 </form>
-<ion-item class="tab-checkout"style="color:black; text-decoration:none" href="/#/tab/checkout">
+<ion-item class="tab-checkout"style="color:black; text-decoration:none" href="#/tab/cart/checkout">
 
   <button class="button button-block button-positive" ng-disabled="userForm.$invalid" ng-click="removeAll()">
     Checkout
   </button>
 </ion-item>
-<ion-item class="tab-checkout" ng-hide="authData" class="card" ng-click="login(); removeAll()" href="/#/tab/checkout">
+<ion-item class="tab-checkout" ng-hide="authData" class="card" ng-click="login(); removeAll()" ng-href="#/tab/cart/checkout">
   <button class="button button-block button-positive">
   Checkout with Facebook
   </button>

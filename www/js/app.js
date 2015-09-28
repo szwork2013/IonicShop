@@ -43,8 +43,8 @@ angular.module('starter', ['ionic', 'firebase', 'starter.controllers', 'starter.
           }
         }
       })
-      .state('tab.checkout', {
-        url: '/checkout',
+      .state('tab.cart-checkout', {
+        url: '/cart/checkout',
         views: {
           'tab-cart': {
             templateUrl: 'templates/tab-checkout.html',
