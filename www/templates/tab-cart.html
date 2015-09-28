@@ -17,10 +17,49 @@
   </div>
 </div>
 </div>
-<a class="tab-checkout"style="color:black; text-decoration:none" href="/#/tab/checkout"><button class="button button-block button-positive">
-  Checkout
-</button>
-</a>  
+<form name="userForm" ng-submit="submitForm()" novalidate>
+
+  <!-- NAME -->
+  <div class="form-group" ng-class="{ 'has-error' : userForm.name.$invalid && !userForm.name.$pristine }">
+      <label class="item item-input">
+      <input type="text" name="name" class="form-control" ng-model="user.name" placeholder="Firstname" required>
+    </label>
+    <p ng-show="userForm.name.$invalid && !userForm.name.$pristine" class="help-block">Your name is required.</p>
+  </div>
+
+  <!-- USERNAME -->
+   <div class="form-group" ng-class="{ 'has-error' : userForm.name.$invalid && !userForm.name.$pristine }">
+      <label class="item item-input">
+      <input type="text" name="lastname" class="form-control" ng-model="user.lastname" placeholder="Lastname" required>
+    </label>
+    <p ng-show="userForm.lastname.$invalid && !userForm.lastname.$pristine" class="help-block">Your surname is required.</p>
+  </div>
+
+  <!-- EMAIL -->
+   <div class="form-group" ng-class="{ 'has-error' : userForm.name.$invalid && !userForm.name.$pristine }">
+      <label class="item item-input">
+      <input type="text" name="address" class="form-control" ng-model="user.address" placeholder="Address" required>
+    </label>
+    <p ng-show="userForm.address.$invalid && !userForm.address.$pristine" class="help-block">Your adress is required.</p>
+  </div>
+
+
+</form>
+<ion-item class="tab-checkout"style="color:black; text-decoration:none" href="/#/tab/checkout">
+
+  <button class="button button-block button-positive" ng-disabled="userForm.$invalid" ng-click="removeAll()">
+    Checkout
+  </button>
+</ion-item>
+<ion-item class="tab-checkout" ng-hide="authData" class="card" ng-click="login(); removeAll()" href="/#/tab/checkout">
+  <button class="button button-block button-positive">
+  Checkout with Facebook
+  </button>
+</ion-item>
+
+</div>
+
+</form>  
 </div>
 </ion-content>
 </ion-view>

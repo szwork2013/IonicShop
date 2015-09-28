@@ -39,14 +39,14 @@ angular.module('starter', ['ionic', 'firebase', 'starter.controllers', 'starter.
         views: {
           'tab-items': {
             templateUrl: 'templates/tab-items.html',
-            controller: 'ContactsCtrl'
+            controller: 'ItemsCtrl'
           }
         }
       })
       .state('tab.checkout', {
         url: '/checkout',
         views: {
-          'tab-checkout': {
+          'tab-cart': {
             templateUrl: 'templates/tab-checkout.html',
             controller: 'CheckoutCtrl'
           }

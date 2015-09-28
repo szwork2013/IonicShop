@@ -2,14 +2,12 @@
 <ion-content class="padding">
 <div class="list card">
 
-<div class="item item-avatar" ng-repeat="contact in contacts">
-		<img src="{{contact.img}}">
-		<a href="/#/tab/items/{{contact.id}}">
-		<h2>{{contact.product_name}}</h2>
-			</a>
-		<p>{{contact.price | currency}}</p>
-	
-	</div>
+<ion-item class="item item-avatar" ng-repeat="item in things" href="#/tab/items/{{item.id}}">
+		<img ng-src="{{item.img}}">
+		<h2>{{item.product_name}}</h2>
+		<p>{{item.price | currency}}</p>
+
+	</ion-item>
 </div>
 </div>
 </ion-content>
